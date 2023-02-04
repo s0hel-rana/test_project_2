@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\SubCategoryController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,12 +16,22 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/admin', function () {
-    return view('admin.home.home');
-});
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/admin', function () {
+    return view('admin.home.home');
+});
+//__category route__//
+Route::get('/category/index',[CategoryController::class,'index'])->name('category.index');
+Route::get('/category/create',[CategoryController::class,'create'])->name('category.create');
+Route::post('/category/store',[CategoryController::class,'store'])->name('category.store');
+
+//__sub-category route__//
+
+Route::get('/sub-category/index',[SubCategoryController::class,'index'])->name('sub-category.index');
+Route::get('/sub-category/create',[SubCategoryController::class,'create'])->name('sub-category.create');
+Route::post('/sub-category/store',[SubCategoryController::class,'store'])->name('sub-category.store');
 
 Route::get('/dashboard', function () {
     return view('dashboard');

@@ -15,8 +15,10 @@
                 </a>
                 <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                     <nav class="sb-sidenav-menu-nested nav">
-                        <a class="nav-link" href="layout-static.html">Static Navigation</a>
-                        <a class="nav-link" href="layout-sidenav-light.html">Light Sidenav</a>
+                        <a class="nav-link" href="{{route('category.index')}}">Category List</a>
+                        <a class="nav-link" href="{{route('category.create')}}">Category Create</a>
+                        <a class="nav-link" href="{{route('sub-category.index')}}">Sub-Category List</a>
+                        <a class="nav-link" href="{{route('sub-category.create')}}">Sub-Category Create</a>
                     </nav>
                 </div>
                 <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
