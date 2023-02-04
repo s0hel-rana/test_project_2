@@ -19,7 +19,8 @@
                 <td>{{$data->description}}</td>
                 <td>
                     <a class="btn btn-primary" href="">Edit</a>
-                    <a class="btn btn-danger" href="">Delete</a>
+                    <a class="btn btn-danger" onclick="return confirm('Are you sure?')" href="{{route('category.delete',$data->id)}}">Delete</a>
+
                 </td>
             </tr>
             @endforeach

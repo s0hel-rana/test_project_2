@@ -27,12 +27,14 @@ Route::get('/admin', function () {
 Route::get('/category/index',[CategoryController::class,'index'])->name('category.index');
 Route::get('/category/create',[CategoryController::class,'create'])->name('category.create');
 Route::post('/category/store',[CategoryController::class,'store'])->name('category.store');
+Route::get('/category/delete/{id}',[CategoryController::class,'delete'])->name('category.delete');
 
 //__sub-category route__//
 
 Route::get('/sub-category/index',[SubCategoryController::class,'index'])->name('sub-category.index');
 Route::get('/sub-category/create',[SubCategoryController::class,'create'])->name('sub-category.create');
 Route::post('/sub-category/store',[SubCategoryController::class,'store'])->name('sub-category.store');
+Route::get('/sub-category/delete/{id}',[SubCategoryController::class,'delete'])->name('sub-category.delete');
 
 //__supplier route__//
 

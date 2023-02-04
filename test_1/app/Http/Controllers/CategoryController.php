@@ -36,4 +36,11 @@ class CategoryController extends Controller
         $category->save();
         return redirect()->back()->with('success','Category added successful');
     }
+
+
+    public function delete($id){
+        $supplier = Category::find($id);
+        $supplier->delete();
+        return redirect()->back()->with('success','Supplier Delete successful');
+    }
 }

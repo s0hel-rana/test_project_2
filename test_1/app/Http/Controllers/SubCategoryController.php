@@ -40,4 +40,10 @@ class SubCategoryController extends Controller
         return redirect()->back()->with('success','Sub Category added successful');
 //        return redirect(route('admin.subCategory.index'));
     }
+
+    public function delete($id){
+        $supplier = Sub_Category::find($id);
+        $supplier->delete();
+        return redirect()->back()->with('success','Supplier Delete successful');
+    }
 }
