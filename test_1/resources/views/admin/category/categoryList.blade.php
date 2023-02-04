@@ -17,7 +17,10 @@
                 <th scope="row">{{++$key}}</th>
                 <td>{{$data->name}}</td>
                 <td>{{$data->description}}</td>
-                <td>#</td>
+                <td>
+                    <a class="btn btn-primary" href="">Edit</a>
+                    <a class="btn btn-danger" href="">Delete</a>
+                </td>
             </tr>
             @endforeach
             </tbody>

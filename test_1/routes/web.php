@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\SubCategoryController;
+use App\Http\Controllers\SupplierController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -32,6 +33,13 @@ Route::post('/category/store',[CategoryController::class,'store'])->name('catego
 Route::get('/sub-category/index',[SubCategoryController::class,'index'])->name('sub-category.index');
 Route::get('/sub-category/create',[SubCategoryController::class,'create'])->name('sub-category.create');
 Route::post('/sub-category/store',[SubCategoryController::class,'store'])->name('sub-category.store');
+
+//__supplier route__//
+
+Route::get('/supplier/index',[SupplierController::class,'index'])->name('supplier.index');
+Route::get('/supplier/create',[SupplierController::class,'create'])->name('supplier.create');
+Route::post('/supplier/store',[SupplierController::class,'store'])->name('supplier.store');
+Route::get('/supplier/delete/{id}',[SupplierController::class,'delete'])->name('supplier.delete');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
