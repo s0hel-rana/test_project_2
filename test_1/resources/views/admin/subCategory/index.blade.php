@@ -20,7 +20,7 @@
                     <td>{{$data->sub_name}}</td>
                     <td>{{$data->description}}</td>
                     <td>
-                        <a class="btn btn-primary" href="">Edit</a>
+                        <a class="btn btn-primary" href="{{route('sub-category.edit',$data->id)}}">Edit</a>
                         <a class="btn btn-danger" onclick="return confirm('Are you sure?')" href="{{route('sub-category.delete',$data->id)}}">Delete</a>
                     </td>
                 </tr>

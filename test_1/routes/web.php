@@ -34,6 +34,8 @@ Route::get('/category/delete/{id}',[CategoryController::class,'delete'])->name('
 Route::get('/sub-category/index',[SubCategoryController::class,'index'])->name('sub-category.index');
 Route::get('/sub-category/create',[SubCategoryController::class,'create'])->name('sub-category.create');
 Route::post('/sub-category/store',[SubCategoryController::class,'store'])->name('sub-category.store');
+Route::get('/sub-category/edit/{id}',[SubCategoryController::class,'edit'])->name('sub-category.edit');
+Route::post('/sub-category/update/{id}',[SubCategoryController::class,'update'])->name('sub-category.update');
 Route::get('/sub-category/delete/{id}',[SubCategoryController::class,'delete'])->name('sub-category.delete');
 
 //__supplier route__//
@@ -41,6 +43,8 @@ Route::get('/sub-category/delete/{id}',[SubCategoryController::class,'delete'])-
 Route::get('/supplier/index',[SupplierController::class,'index'])->name('supplier.index');
 Route::get('/supplier/create',[SupplierController::class,'create'])->name('supplier.create');
 Route::post('/supplier/store',[SupplierController::class,'store'])->name('supplier.store');
+Route::get('/supplier/edit/{id}',[SupplierController::class,'edit'])->name('supplier.edit');
+Route::post('/supplier/update/{id}',[SupplierController::class,'update'])->name('supplier.update');
 Route::get('/supplier/delete/{id}',[SupplierController::class,'delete'])->name('supplier.delete');
 
 Route::get('/dashboard', function () {

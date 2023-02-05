@@ -23,7 +23,7 @@ class SubCategoryController extends Controller
         return view('admin.subCategory.create',compact('categories'));
     }
 
-    //    category store method
+    //   sub category store method
     public function store (Request $request){
 
         $validated = $request->validate([
@@ -31,19 +31,44 @@ class SubCategoryController extends Controller
             'description' => 'max:500',
         ]);
 
-        $category = new Sub_Category();
-        $category->sub_name = $request->sub_name;
-        $category->sub_slug = Str::slug($request->sub_name, '-');
-        $category->description = $request->description;
-        $category->category_id = $request->category_id;
-        $category->save();
+        $sub_category = new Sub_Category();
+        $sub_category->sub_name = $request->sub_name;
+        $sub_category->sub_slug = Str::slug($request->sub_name, '-');
+        $sub_category->description = $request->description;
+        $sub_category->category_id = $request->category_id;
+        $sub_category->save();
         return redirect()->back()->with('success','Sub Category added successful');
 //        return redirect(route('admin.subCategory.index'));
     }
 
+    //   sub category edit method
+    public function edit ($id){
+        $categories = Category::all();
+        $sub_category = Sub_Category::find($id);
+        return view('admin.subCategory.edit',compact('sub_category','categories'));
+    }
+
+    //    sub category update method
+    public function update (Request $request,$id){
+
+        $validated = $request->validate([
+            'sub_name' => 'required|unique:sub__categories|max:255',
+            'description' => 'max:500',
+        ]);
+
+        $sub_category = Sub_Category::find($id);
+        $sub_category->sub_name = $request->sub_name;
+        $sub_category->sub_slug = Str::slug($request->sub_name, '-');
+        $sub_category->description = $request->description;
+        $sub_category->category_id = $request->category_id;
+        $sub_category->save();
+        return redirect()->route('sub-category.index')->with('success','Sub Category Update successful');
+
+    }
+
     public function delete($id){
-        $supplier = Sub_Category::find($id);
-        $supplier->delete();
+        $sub_category = Sub_Category::find($id);
+        $sub_category->delete();
         return redirect()->back()->with('success','Supplier Delete successful');
     }
 }
