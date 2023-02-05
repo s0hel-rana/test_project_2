@@ -52,7 +52,7 @@ class SubCategoryController extends Controller
     public function update (Request $request,$id){
 
         $validated = $request->validate([
-            'sub_name' => 'required|unique:sub__categories|max:255',
+            'sub_name' => 'required|max:255',
             'description' => 'max:500',
         ]);
 

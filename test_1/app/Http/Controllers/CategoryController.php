@@ -16,12 +16,12 @@ class CategoryController extends Controller
         return view('admin.category.categoryList',compact('categories'));
     }
 
-//    category create method
+    //__category create method__//
     public function create (){
         return view('admin.category.create');
     }
 
-    //    category store method
+    //__category store method__//
     public function store (Request $request){
 
         $validated = $request->validate([
@@ -37,6 +37,28 @@ class CategoryController extends Controller
         return redirect()->back()->with('success','Category added successful');
     }
 
+    //__category edit method__//
+    public function edit ($id){
+        $categories = Category::find($id);
+        return view('admin.category.edit',compact('categories'));
+    }
+
+    //__category update method__//
+    public function update (Request $request,$id){
+
+        $validated = $request->validate([
+            'name' => 'required|max:255',
+            'description' => 'max:500',
+        ]);
+
+        $category = Category::find($id);
+        $category->name = $request->name;
+        $category->slug = Str::slug($request->name, '-');
+        $category->description = $request->description;
+        $category->save();
+        return redirect()->route('category.index')->with('success','Category Update successful');
+
+    }
 
     public function delete($id){
         $supplier = Category::find($id);
