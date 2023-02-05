@@ -8,31 +8,62 @@ BackEnd
 <style>
     .sidebar {
       position: fixed;
-      background: rgb(188, 188, 216);
+      background: #00305d;
       right: -300px;
       width: 300px;
-      height: 300px;
-      background-color: rgb(235, 148, 148);
+      /*height: 300px;*/
+      /*background-color: rgb(235, 148, 148);*/
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
       transition: right 0.3s ease-out;
+      border-radius: 15px 0 0 15px;
+
     }
 
     .sidebar-content {
-      border: 4px solid blue;
-      background: white;
-      padding: 20px;
+      /*border: 2px solid blue;*/
+      background: #00305d;
+      height: 274px;
+      padding: 10px 0 0 12px;
+      width: 465px;
+      border-radius: 15px 0 0 15px;
     }
-
+    /*.sidebar-container{*/
+    /*   margin: 10px 0;*/
+    /*}*/
+    .sidebar-row{
+        width: 100px;
+        height: 75px;
+        float: left;
+        margin: 5px;
+        text-align: center;
+        border: 1px solid #ddd;
+        background: linear-gradient(180deg, rgb(103 108 111) 0%, rgb(172 200 132) 100%);
+        border-radius: 10px;
+    }
+    .sidebar-row span{
+        width: 100px;
+        display: block;
+        margin: 5px 0;
+    }
+    .sidebar-row img{
+        width: 35px;
+        height: 35px;
+        margin: 5px 0;
+        border-radius: 15px;
+    }
+    .sidebar-row a{
+        text-decoration: none;
+        color: whitesmoke;
+    }
     .sidebar.open {
-        background: rgb(201, 73, 73);
-        height: 300px;
-        width: 400px;
+        width: 510px;
         z-index: 5;
-        right: 0;
+        right: -45px;
+        top: 70px;
     }
     #toggle-sidebar{
         background: #eba7ab;
-        margin-top: 0;
+        margin-top: 2px;
         margin-left: 580px;
 
     }
@@ -41,23 +72,82 @@ BackEnd
     <main>
         <div class="sidebar">
             <div class="sidebar-content">
-              <div class="container">
-                <div class="row">
-                  <div class="col-sm">
-                    One
+              <div class="sidebar-container">
+                  <div class="sidebar-row">
+                      <a href="">
+                          <img src="{{asset('adminAsset')}}/assets/img/download.png" alt="">
+                          <span>one</span>
+                      </a>
                   </div>
-                  <div class="col-sm">
-                    Two
+                    <div class="sidebar-row">
+                        <a href="">
+                            <img src="{{asset('adminAsset')}}/assets/img/download.png" alt="">
+                            <span>two</span>
+                        </a>
+                    </div>
+                    <div class="sidebar-row">
+                        <a href="">
+                            <img src="{{asset('adminAsset')}}/assets/img/download.png" alt="">
+                            <span>three</span>
+                        </a>
+                    </div>
+                    <div class="sidebar-row">
+                        <a href="">
+                            <img src="{{asset('adminAsset')}}/assets/img/download.png" alt="">
+                            <span>four</span>
+                        </a>
+                    </div>
+                  <div class="sidebar-row">
+                      <a href="">
+                          <img src="{{asset('adminAsset')}}/assets/img/download.png" alt="">
+                          <span>one</span>
+                      </a>
                   </div>
-                  <div class="col-sm">
-                    Three
+                  <div class="sidebar-row">
+                      <a href="">
+                          <img src="{{asset('adminAsset')}}/assets/img/download.png" alt="">
+                          <span>two</span>
+                      </a>
                   </div>
-
-                </div>
+                  <div class="sidebar-row">
+                      <a href="">
+                          <img src="{{asset('adminAsset')}}/assets/img/download.png" alt="">
+                          <span>three</span>
+                      </a>
+                  </div>
+                  <div class="sidebar-row">
+                      <a href="">
+                          <img src="{{asset('adminAsset')}}/assets/img/download.png" alt="">
+                          <span>four</span>
+                      </a>
+                  </div>
+                  <div class="sidebar-row">
+                      <a href="">
+                          <img src="{{asset('adminAsset')}}/assets/img/download.png" alt="">
+                          <span>one</span>
+                      </a>
+                  </div>
+                  <div class="sidebar-row">
+                      <a href="">
+                          <img src="{{asset('adminAsset')}}/assets/img/download.png" alt="">
+                          <span>two</span>
+                      </a>
+                  </div>
+                  <div class="sidebar-row">
+                      <a href="">
+                          <img src="{{asset('adminAsset')}}/assets/img/download.png" alt="">
+                          <span>three</span>
+                      </a>
+                  </div>
+                  <div class="sidebar-row">
+                      <a href="">
+                          <img src="{{asset('adminAsset')}}/assets/img/download.png" alt="">
+                          <span>four</span>
+                      </a>
+                  </div>
               </div>
             </div>
-          </div>
-
+        </div>
           <button id="toggle-sidebar"><i class="fa fa-bars"></i></button>
     </main>
     <script>

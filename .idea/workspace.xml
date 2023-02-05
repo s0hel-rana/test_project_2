@@ -3,12 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="8c7eed7f-f738-48c6-8d41-0c5871fee385" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_1/app/Http/Controllers/CategoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/test_1/app/Http/Controllers/CategoryController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_1/app/Http/Controllers/SubCategoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/test_1/app/Http/Controllers/SubCategoryController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_1/resources/views/admin/category/categoryList.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/test_1/resources/views/admin/category/categoryList.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_1/resources/views/admin/subCategory/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/test_1/resources/views/admin/subCategory/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_1/resources/views/admin/subCategory/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/test_1/resources/views/admin/subCategory/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_1/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/test_1/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_1/resources/views/admin/home/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/test_1/resources/views/admin/home/home.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -145,7 +140,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../learnLaravel" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../online-food-ordering-system" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -158,7 +153,7 @@
       <option name="presentableId" value="Default" />
       <updated>1675568428066</updated>
       <workItem from="1675568429394" duration="26000" />
-      <workItem from="1675568493134" duration="7468000" />
+      <workItem from="1675568493134" duration="22844000" />
     </task>
     <servers />
   </component>
