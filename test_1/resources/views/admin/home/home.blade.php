@@ -43,6 +43,7 @@ BackEnd
     .sidebar-row span{
         width: 100px;
         display: block;
+        clear: both;
         margin: 5px 0;
     }
     .sidebar-row img{
@@ -54,6 +55,7 @@ BackEnd
     .sidebar-row a{
         text-decoration: none;
         color: whitesmoke;
+        font-size: 13px;
     }
     .sidebar.open {
         width: 510px;
@@ -75,74 +77,74 @@ BackEnd
               <div class="sidebar-container">
                   <div class="sidebar-row">
                       <a href="">
-                          <img src="{{asset('adminAsset')}}/assets/img/download.png" alt="">
-                          <span>one</span>
+                          <img src="{{asset('adminAsset')}}/assets/img/vector-3.webp" alt="sales">
+                          <span>Sales</span>
                       </a>
                   </div>
                     <div class="sidebar-row">
                         <a href="">
-                            <img src="{{asset('adminAsset')}}/assets/img/download.png" alt="">
-                            <span>two</span>
+                            <img src="{{asset('adminAsset')}}/assets/img/vector-4.jpg" alt="service">
+                            <span>Service</span>
                         </a>
                     </div>
                     <div class="sidebar-row">
                         <a href="">
-                            <img src="{{asset('adminAsset')}}/assets/img/download.png" alt="">
-                            <span>three</span>
+                            <img src="{{asset('adminAsset')}}/assets/img/return.jpg" alt="sales return">
+                            <span>Sales Return</span>
                         </a>
                     </div>
                     <div class="sidebar-row">
                         <a href="">
-                            <img src="{{asset('adminAsset')}}/assets/img/download.png" alt="">
-                            <span>four</span>
+                            <img src="{{asset('adminAsset')}}/assets/img/purchase.png" alt="Purchase">
+                            <span>Purchase</span>
                         </a>
                     </div>
                   <div class="sidebar-row">
                       <a href="">
-                          <img src="{{asset('adminAsset')}}/assets/img/download.png" alt="">
-                          <span>one</span>
+                          <img src="{{asset('adminAsset')}}/assets/img/sale-return.png" alt="Purchase Return">
+                          <span>Purchase Return</span>
                       </a>
                   </div>
                   <div class="sidebar-row">
                       <a href="">
-                          <img src="{{asset('adminAsset')}}/assets/img/download.png" alt="">
-                          <span>two</span>
+                          <img src="{{asset('adminAsset')}}/assets/img/product.png" alt="Add Product">
+                          <span>Add Product</span>
                       </a>
                   </div>
                   <div class="sidebar-row">
                       <a href="">
-                          <img src="{{asset('adminAsset')}}/assets/img/download.png" alt="">
-                          <span>three</span>
+                          <img src="{{asset('adminAsset')}}/assets/img/download.png" alt="Expenses">
+                          <span>Expenses</span>
                       </a>
                   </div>
                   <div class="sidebar-row">
                       <a href="">
-                          <img src="{{asset('adminAsset')}}/assets/img/download.png" alt="">
-                          <span>four</span>
+                          <img src="{{asset('adminAsset')}}/assets/img/download.png" alt="Cash Received">
+                          <span>Cash Received</span>
                       </a>
                   </div>
                   <div class="sidebar-row">
                       <a href="">
-                          <img src="{{asset('adminAsset')}}/assets/img/download.png" alt="">
-                          <span>one</span>
+                          <img src="{{asset('adminAsset')}}/assets/img/download.png" alt="Cash Payment">
+                          <span>Cash Payment</span>
                       </a>
                   </div>
                   <div class="sidebar-row">
                       <a href="">
-                          <img src="{{asset('adminAsset')}}/assets/img/download.png" alt="">
-                          <span>two</span>
+                          <img src="{{asset('adminAsset')}}/assets/img/download.png" alt="Cash Statement">
+                          <span>Cash Statement</span>
                       </a>
                   </div>
                   <div class="sidebar-row">
                       <a href="">
-                          <img src="{{asset('adminAsset')}}/assets/img/download.png" alt="">
-                          <span>three</span>
+                          <img src="{{asset('adminAsset')}}/assets/img/download.png" alt="Warranty Claim">
+                          <span>Warranty Claim</span>
                       </a>
                   </div>
                   <div class="sidebar-row">
                       <a href="">
-                          <img src="{{asset('adminAsset')}}/assets/img/download.png" alt="">
-                          <span>four</span>
+                          <img src="{{asset('adminAsset')}}/assets/img/download.png" alt="Inventory">
+                          <span>Inventory</span>
                       </a>
                   </div>
               </div>
