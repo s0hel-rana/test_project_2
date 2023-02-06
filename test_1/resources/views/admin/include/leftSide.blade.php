@@ -30,6 +30,8 @@
                         <a class="nav-link" href="{{route('category.create')}}">Category Create</a>
                         <a class="nav-link" href="{{route('sub-category.index')}}">Sub-Category List</a>
                         <a class="nav-link" href="{{route('sub-category.create')}}">Sub-Category Create</a>
+                        <a class="nav-link" href="{{route('product.index')}}">Product List</a>
+                        <a class="nav-link" href="{{route('product.create')}}">Product Create</a>
                     </nav>
                 </div>
                 <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts3" aria-expanded="false" aria-controls="collapseLayouts3">

@@ -5,6 +5,7 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\SubCategoryController;
 use App\Http\Controllers\SupplierController;
 use App\Http\Controllers\BrandController;
+use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -60,6 +61,14 @@ Route::prefix('brand')->controller(BrandController::class)->group(function () {
     Route::post('/delete/{id}', 'delete')->name('brand.delete');
 });
 
+//__Product route__//
+Route::prefix('product')->controller(ProductController::class)->group(function () {
+    Route::get('/index', 'index')->name('product.index');
+    Route::get('/create', 'create')->name('product.create');
+    Route::post('/store', 'store')->name('product.store');
+    Route::get('/edit/{id}', 'edit')->name('product.edit');
+    Route::post('/delete/{id}', 'delete')->name('product.delete');
+});
 
 
 Route::get('/dashboard', function () {
