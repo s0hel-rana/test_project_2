@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\SubCategoryController;
 use App\Http\Controllers\SupplierController;
+use App\Http\Controllers\BrandController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -23,6 +24,7 @@ Route::get('/', function () {
 Route::get('/admin', function () {
     return view('admin.home.home');
 });
+
 //__category route__//
 Route::get('/category/index',[CategoryController::class,'index'])->name('category.index');
 Route::get('/category/create',[CategoryController::class,'create'])->name('category.create');
@@ -48,6 +50,17 @@ Route::post('/supplier/store',[SupplierController::class,'store'])->name('suppli
 Route::get('/supplier/edit/{id}',[SupplierController::class,'edit'])->name('supplier.edit');
 Route::post('/supplier/update/{id}',[SupplierController::class,'update'])->name('supplier.update');
 Route::get('/supplier/delete/{id}',[SupplierController::class,'delete'])->name('supplier.delete');
+
+//__brand route__//
+Route::prefix('brand')->controller(BrandController::class)->group(function () {
+    Route::get('/index', 'index')->name('brand.index');
+    Route::get('/create', 'create')->name('brand.create');
+    Route::post('/store', 'store')->name('brand.store');
+    Route::get('/edit/{id}', 'edit')->name('brand.edit');
+    Route::post('/delete/{id}', 'delete')->name('brand.delete');
+});
+
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');

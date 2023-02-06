@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Supplier;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class SupplierController extends Controller
 {
@@ -28,12 +29,22 @@ class SupplierController extends Controller
 
         $supplier = new Supplier();
         $supplier->name = $request->name;
-        $supplier->code = $request->code;
+        $supplier->code = $this->generateUniqueCode();
         $supplier->address = $request->address;
         $supplier->status = $request->status;
         $supplier->save();
         return redirect()->back()->with('success','Supplier added successful');
     }
+
+    //__supplier code generator__//
+    public function generateUniqueCode()
+    {
+        do {
+            $code = Str::random(3).substr(time(), 6,8).Str::random(3);
+        } while (Supplier::where("code", "=", $code)->first());
+        return strtoupper($code);
+    }
+
 
 //    supplier edit method
     public function edit($id){
