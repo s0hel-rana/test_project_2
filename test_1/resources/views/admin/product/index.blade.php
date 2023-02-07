@@ -26,12 +26,12 @@
                                     <th scope="row">{{++$key}}</th>
                                     <td>{{$data->name}}</td>
                                     <td>{{$data->code}}</td>
-                                    <td>{{$data->price}}</td>
+                                    <td>{{number_format($data->price,2).' Tk'}}</td>
                                     <td>{{$data->category->name}}</td>
                                     <td>{{$data->sub_category->sub_name}}</td>
                                     <td>{{$data->brand->name}}</td>
                                     <td>
-                                        <img width="100" src="{{asset($data->image) }}" alt="product photo">
+                                        <img width="100" src="{{asset('adminAsset/upload-image/product-image/'.$data->image)}}" alt="product photo">
                                     </td>
                                     <td>
                                         <a class="btn btn-primary" href="{{route('product.edit',$data->id)}}">Edit</a>

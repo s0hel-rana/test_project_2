@@ -22,9 +22,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/admin', function () {
-    return view('admin.home.home');
-});
+Route::get('/admin',[\App\Http\Controllers\AdminController::class,'index'])->name('admin.index');
 
 //__category route__//
 Route::get('/category/index',[CategoryController::class,'index'])->name('category.index');
@@ -67,7 +65,8 @@ Route::prefix('product')->controller(ProductController::class)->group(function (
     Route::get('/create', 'create')->name('product.create');
     Route::post('/store', 'store')->name('product.store');
     Route::get('/edit/{id}', 'edit')->name('product.edit');
-    Route::post('/delete/{id}', 'delete')->name('product.delete');
+    Route::post('/update/{id}', 'update')->name('product.update');
+    Route::get('/delete/{id}', 'delete')->name('product.delete');
 });
 
 
