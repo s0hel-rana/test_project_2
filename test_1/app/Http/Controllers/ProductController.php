@@ -31,8 +31,12 @@ class ProductController extends Controller
 
         $validated = $request->validate([
             'name' => 'required|max:255',
+            'price' => 'required',
+            'category_id' => 'required',
+            'sub_category_id' => 'required',
+            'brand_id' => 'required',
+            'image' => 'image|mimes:png,jpeg,gif|size:2048|dimensions:min_width=200,min_height=200,max_width=600,max_height=600',
         ]);
-
         $product = new Product();
         $product->name = $request->name;
         $product->price = $request->price;
@@ -46,12 +50,17 @@ class ProductController extends Controller
     }
     //__product image save method__//
     public function saveImage(Request $request){
-        $image =$request->file('image');
-        $imageName =rand().'.'.$image->extension();
-        $directory ='adminAsset/upload-image/product-image/';
-        $imageUrl = $imageName;
-        $image->move($directory,$imageName);
-        return $imageUrl;
+        if ($request->file('image')){
+            $image =$request->file('image');
+            $imageName =rand().'.'.$image->extension();
+            $directory ='adminAsset/upload-image/product-image/';
+            $imageUrl = $directory.$imageName;
+            $image->move($directory,$imageName);
+            return $imageUrl;
+        }
+        else{
+            return null;
+        }
     }
 
     //__product code generator method__//
@@ -78,6 +87,10 @@ class ProductController extends Controller
 
         $validated = $request->validate([
             'name' => 'required|max:255',
+            'category_id' => 'required',
+            'sub_category_id' => 'required',
+            'brand_id' => 'required',
+            'image' => 'image|mimes:png,jpeg,gif|size:2048|dimensions:min_width=200,min_height=200,max_width=600,max_height=600',
         ]);
 
         $product = Product::find($id);
@@ -100,9 +113,10 @@ class ProductController extends Controller
     //__product delete method__//
     public function delete($id){
         $product = Product::find($id);
+
         if ($product->image){
-            if (file_exists(asset('adminAsset/upload-image/product-image/'.$product->image))){
-                unlink(asset('adminAsset/upload-image/product-image/'.$product->image));
+            if (file_exists($product->image)){
+                unlink($product->image);
             }
         }
         $product->delete();

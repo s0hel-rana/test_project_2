@@ -11699,3 +11699,75 @@ body {
   font-size: 0.75rem;
   border-radius: 0.25rem !important;
 }
+
+.nav-link:hover{
+    background: #800000;
+
+}
+.nav-link:hover .sb-nav-link-icon{
+    cursor: pointer;
+    transition: 0.9s;
+    transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+}
+ /*popup sidebar css start*/
+
+.sidebar {
+    position: fixed;
+    background: #00305d;
+    right: -300px;
+    width: 300px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    transition: right 0.3s ease-out;
+    border-radius: 15px 0 0 15px;
+    z-index: 3;
+}
+
+.sidebar-content {
+    background: #00305d;
+    height: 274px;
+    padding: 10px 0 0 12px;
+    width: 465px;
+    border-radius: 15px 0 0 15px;
+}
+.sidebar-row{
+    width: 100px;
+    height: 75px;
+    float: left;
+    margin: 5px;
+    text-align: center;
+    border: 1px solid #ddd;
+    background: linear-gradient(180deg, rgb(103 108 111) 0%, rgb(172 200 132) 100%);
+    border-radius: 10px;
+}
+.sidebar-row span{
+    width: 100px;
+    display: block;
+    clear: both;
+    margin: 5px 0;
+}
+.sidebar-row img{
+    width: 35px;
+    height: 35px;
+    margin: 5px 0;
+    border-radius: 15px;
+}
+.sidebar-row a{
+    text-decoration: none;
+    color: whitesmoke;
+    font-size: 13px;
+}
+.sidebar.open {
+    width: 510px;
+    z-index: 5;
+    right: -45px;
+    top: 70px;
+}
+#toggle-sidebar{
+    background: #eba7ab;
+    margin-top: 2px;
+    margin-left: 580px;
+
+}
+/*popup sidebar css end */

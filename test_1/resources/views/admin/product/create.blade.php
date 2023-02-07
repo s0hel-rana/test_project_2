@@ -10,7 +10,7 @@
                             @csrf
                             <div class="mb-3">
                                 <label for="product_name" class="form-label">Product Name</label>
-                                <input type="text" class="form-control @error('name') is-invalid @enderror" name="name" placeholder="Product Name">
+                                <input type="text" class="form-control @error('name') is-invalid @enderror" name="name" placeholder="Product Name" value="{{old('name')}}">
                                 @error('name')
                                 <span class="invalid-feedback" role="alert">
                                         <strong>{{$message}}</strong>
@@ -19,8 +19,8 @@
                             </div>
                             <div class="mb-3">
                                 <label for="price" class="form-label">Price</label>
-                                <input type="text" class="form-control @error('price') is-invalid @enderror" name="price" placeholder="Price">
-                                @error('code')
+                                <input type="text" class="form-control @error('price') is-invalid @enderror" name="price" placeholder="Price" value="{{old('price')}}">
+                                @error('price')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{$message}}</strong>
                                 </span>
@@ -38,7 +38,7 @@
                             <div class="mb-3">
                                 <label for="category" class="form-label">Select Category</label>
                                 <select class="form-control" name="category_id">
-                                    <option selected>--select--</option>
+                                    <option>--select--</option>
                                     @foreach($categories as $category)
                                         <option value="{{$category->id}}">{{$category->name}}</option>
                                     @endforeach
@@ -47,7 +47,7 @@
                             <div class="mb-3">
                                 <label for="sub_category" class="form-label">Select Sub-Category</label>
                                 <select class="form-control" name="sub_category_id">
-                                    <option selected>--select--</option>
+                                    <option >--select--</option>
                                     @foreach($sub_categories as $sub_category)
                                         <option value="{{$sub_category->id}}">{{$sub_category->sub_name}}</option>
                                     @endforeach
@@ -56,7 +56,7 @@
                             <div class="mb-3">
                                 <label for="brand" class="form-label">Select Brand</label>
                                 <select class="form-control" name="brand_id">
-                                    <option selected>--select--</option>
+                                    <option>--select--</option>
                                     @foreach($brands as $brand)
                                         <option value="{{$brand->id}}">{{$brand->name}}</option>
                                     @endforeach
