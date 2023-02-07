@@ -1,3 +1,17 @@
+<style>
+    .nav-link:hover{
+        background: #800000;
+
+    }
+    .nav-link:hover .sb-nav-link-icon{
+    cursor: pointer;
+    transition: 0.9s;
+    transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+  }
+  </style>
+
 <div id="layoutSidenav_nav">
     <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
         <div class="sb-sidenav-menu">
