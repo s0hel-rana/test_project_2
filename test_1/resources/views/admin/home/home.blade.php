@@ -11,25 +11,19 @@ BackEnd
       background: #00305d;
       right: -300px;
       width: 300px;
-      /*height: 300px;*/
-      /*background-color: rgb(235, 148, 148);*/
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
       transition: right 0.3s ease-out;
       border-radius: 15px 0 0 15px;
-
+      z-index: 3;
     }
 
     .sidebar-content {
-      /*border: 2px solid blue;*/
       background: #00305d;
       height: 274px;
       padding: 10px 0 0 12px;
       width: 465px;
       border-radius: 15px 0 0 15px;
     }
-    /*.sidebar-container{*/
-    /*   margin: 10px 0;*/
-    /*}*/
     .sidebar-row{
         width: 100px;
         height: 75px;
