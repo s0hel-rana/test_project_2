@@ -1,49 +1,54 @@
 @extends('admin.master')
 @section('content')
-    <div class="container-fluid px-4">
-        <div class="row">
-            <div class="col-md-12">
-                <h3 class="mt-4">Product Details</h3>
-                <div class="card mb-4 mt-4">
-                    <div class="card-body">
-                        <table class="table table-responsive" id="datatablesSimple">
-                            <thead>
-                            <tr>
-                                <th scope="col">SN</th>
-                                <th scope="col">Name</th>
-                                <th scope="col">Code</th>
-                                <th scope="col">Price</th>
-                                <th scope="col">Category</th>
-                                <th scope="col">Sub-Category</th>
-                                <th scope="col">Brand</th>
-                                <th scope="col">Image</th>
-                                <th scope="col">Action</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-{{--                            @foreach($products as $key => $data)--}}
-{{--                                <tr>--}}
-{{--                                    <th scope="row">{{++$key}}</th>--}}
-{{--                                    <td>{{$data->name}}</td>--}}
-{{--                                    <td>{{$data->code}}</td>--}}
-{{--                                    <td>{{number_format($data->price,2).' Tk'}}</td>--}}
-{{--                                    <td>{{$data->category->name}}</td>--}}
-{{--                                    <td>{{$data->sub_category->sub_name}}</td>--}}
-{{--                                    <td>{{$data->brand->name}}</td>--}}
-{{--                                    <td>--}}
-{{--                                        <img width="100" src="{{asset($data->image) }}" alt="product photo">--}}
-{{--                                    </td>--}}
-{{--                                    <td>--}}
-{{--                                        <a class="btn btn-primary" href="{{route('product.edit',$data->id)}}">Edit</a>--}}
-{{--                                        <a class="btn btn-danger" onclick="return confirm('Are you sure?')" href="{{route('product.delete',$data->id)}}">Delete</a>--}}
-{{--                                    </td>--}}
-{{--                                </tr>--}}
-{{--                            @endforeach--}}
-                            </tbody>
-                        </table>
+    <div class="container mt-5 mb-5">
+        <div class="row d-flex justify-content-center">
+            <div class="col-md-10">
+               <h3 class="mt-2">Product Details</h3>
+                <a style="margin-left: 96%;text-decoration: none" href="javascript:window.print();">Print</a>
+                <div class="card">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="images p-3">
+                                <div class="text-center p-4"> <img class="w-100" id="main-image" src="{{asset($product->image) }}"/> </div>
+{{--                                <div class="thumbnail text-center"> <img onclick="change_image(this)" src="https://i.imgur.com/Rx7uKd0.jpg" width="70"> <img onclick="change_image(this)" src="https://i.imgur.com/Dhebu4F.jpg" width="70"> </div>--}}
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="product p-4">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="d-flex align-items-center"><a href="{{route('product.index')}}" class="ml-1 text-decoration-none"><i class="fa fa-long-arrow-left"></i>Back</a> </div> <i class="fa fa-shopping-cart text-muted"></i>
+                                </div>
+                                <div class="mt-4 mb-3"> <span class="text-uppercase text-muted brand">{{$product->brand->name}}</span>
+                                    <h5 class="text-uppercase">{{$product->name}}</h5>
+                                    <div class="price d-flex flex-row align-items-center"> <span class="act-price">$20</span>
+                                        <div class="ml-2"> <small class="dis-price">$59</small> <span>40% OFF</span> </div>
+                                    </div>
+                                </div>
+                                <p class="about">{{$product->description}}</p>
+                                <div class="sizes mt-5">
+                                    <h6 class="text-uppercase">Size</h6> <label class="radio"> <input type="radio" name="size" value="S" checked> <span>S</span> </label> <label class="radio"> <input type="radio" name="size" value="M"> <span>M</span> </label> <label class="radio"> <input type="radio" name="size" value="L"> <span>L</span> </label> <label class="radio"> <input type="radio" name="size" value="XL"> <span>XL</span> </label> <label class="radio"> <input type="radio" name="size" value="XXL"> <span>XXL</span> </label>
+                                </div>
+                                <div class="cart mt-4 align-items-center"> <button class="btn btn-danger text-uppercase mr-2 px-4">Add to cart</button> <i class="fa fa-heart text-muted"></i> <i class="fa fa-share-alt text-muted"></i> </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
+{{--<script>--}}
+{{--    function change_image(image){--}}
+
+{{--        var container = document.getElementById("main-image");--}}
+
+{{--        container.src = image.src;--}}
+{{--    }--}}
+
+
+
+{{--    document.addEventListener("DOMContentLoaded", function(event) {--}}
+{{--        --}}
+{{--    });--}}
+{{--</script>--}}
 @endsection

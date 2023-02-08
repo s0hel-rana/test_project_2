@@ -22,6 +22,7 @@ return new class extends Migration
             $table->foreignId('sub_category_id')->nullable()->constrained('sub__categories')->onDelete('cascade');
             $table->foreignId('brand_id')->nullable()->constrained('brands')->onDelete('cascade');
             $table->string('image')->nullable();
+            $table->string('description')->nullable();
             $table->timestamps();
         });
     }

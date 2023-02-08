@@ -45,6 +45,7 @@ class ProductController extends Controller
         $product->sub_category_id = $request->sub_category_id;
         $product->brand_id = $request->brand_id;
         $product->image = $this->saveImage($request);
+        $product->description = $request->description;
         $product->save();
         return redirect()->route('product.index')->with('success','Product added successful');
     }
@@ -73,7 +74,7 @@ class ProductController extends Controller
 //            'category_id' => 'required',
 //            'sub_category_id' => 'required',
 //            'brand_id' => 'required',
-            'image' => 'image|mimes:png,jpeg,gif|size:2048|dimensions:min_width=200,min_height=200,max_width=600,max_height=600',
+            'image' => 'image|mimes:png,jpeg,gif',
         ]);
 
         $product = Product::find($id);
@@ -89,6 +90,7 @@ class ProductController extends Controller
             }
         }
         $product->image = $this->saveImage($request);
+        $product->description = $request->description;
         $product->save();
         return redirect()->route('product.index')->with('success','Product added successful');
     }

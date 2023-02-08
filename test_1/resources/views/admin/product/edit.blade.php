@@ -63,14 +63,18 @@
                                 </select>
                             </div>
                             <div class="mb-3">
-                                <label for="image" style="margin-bottom: -7px" class="form-label d-block">Image</label>
-                                <input type="file" class="form-control w-50 d-inline @error('image') is-invalid @enderror" name="image">
+                                <label for="image" class="form-label d-block">Image</label>
+                                <input type="file" class="form-control w-75 d-inline @error('image') is-invalid @enderror" name="image">
                                 <img width="80" src="{{asset($product->image) }}" alt="product">
                                 @error('image')
                                 <span class="invalid-feedback" role="alert">
                                         <strong>{{$message}}</strong>
                                     </span>
                                 @enderror
+                            </div>
+                            <div class="mb-3">
+                                <label for="description" class="form-label">Product Description</label>
+                                <textarea class="form-control" name="description" placeholder="Product Description"></textarea>
                             </div>
                             <button type="submit" class="btn btn-primary">save</button>
                         </form>

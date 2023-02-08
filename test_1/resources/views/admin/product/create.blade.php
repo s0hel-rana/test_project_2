@@ -71,6 +71,10 @@
                                     </span>
                                 @enderror
                             </div>
+                            <div class="mb-3">
+                                <label for="description" class="form-label">Product Description</label>
+                                <textarea class="form-control" name="description" placeholder="Product Description"></textarea>
+                            </div>
                             <button type="submit" class="btn btn-primary">save</button>
                         </form>
                     </div>
