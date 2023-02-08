@@ -35,7 +35,7 @@ class ProductController extends Controller
 //            'category_id' => 'required',
 //            'sub_category_id' => 'required',
 //            'brand_id' => 'required',
-            'image' => 'image|mimes:png,jpeg,gif|size:2048|dimensions:min_width=200,min_height=200,max_width=600,max_height=600',
+            'image' => 'image|mimes:png,jpeg,gif',
         ]);
         $product = new Product();
         $product->name = $request->name;
