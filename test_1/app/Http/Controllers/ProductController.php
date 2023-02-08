@@ -32,9 +32,9 @@ class ProductController extends Controller
         $validated = $request->validate([
             'name' => 'required|max:255',
             'price' => 'required',
-            'category_id' => 'required',
-            'sub_category_id' => 'required',
-            'brand_id' => 'required',
+//            'category_id' => 'required',
+//            'sub_category_id' => 'required',
+//            'brand_id' => 'required',
             'image' => 'image|mimes:png,jpeg,gif|size:2048|dimensions:min_width=200,min_height=200,max_width=600,max_height=600',
         ]);
         $product = new Product();
@@ -48,30 +48,12 @@ class ProductController extends Controller
         $product->save();
         return redirect()->route('product.index')->with('success','Product added successful');
     }
-    //__product image save method__//
-    public function saveImage(Request $request){
-        if ($request->file('image')){
-            $image =$request->file('image');
-            $imageName =rand().'.'.$image->extension();
-            $directory ='adminAsset/upload-image/product-image/';
-            $imageUrl = $directory.$imageName;
-            $image->move($directory,$imageName);
-            return $imageUrl;
-        }
-        else{
-            return null;
-        }
-    }
 
-    //__product code generator method__//
-    public function generateUniqueCode()
-    {
-        do {
-            $code = Str::random(3).substr(time(), 6,8).Str::random(3);
-        } while (Product::where("code", "=", $code)->first());
-        return strtoupper($code);
+    //__product show method__//
+    public function show($id){
+        $product = Product::findorfail($id);
+        return view('admin.product.show',compact('product'));
     }
-
     //__product edit method__//
     public function edit($id){
         $sub_categories = Sub_Category::all();
@@ -87,9 +69,10 @@ class ProductController extends Controller
 
         $validated = $request->validate([
             'name' => 'required|max:255',
-            'category_id' => 'required',
-            'sub_category_id' => 'required',
-            'brand_id' => 'required',
+            'price' => 'required',
+//            'category_id' => 'required',
+//            'sub_category_id' => 'required',
+//            'brand_id' => 'required',
             'image' => 'image|mimes:png,jpeg,gif|size:2048|dimensions:min_width=200,min_height=200,max_width=600,max_height=600',
         ]);
 
@@ -121,5 +104,29 @@ class ProductController extends Controller
         }
         $product->delete();
         return redirect()->back();
+    }
+
+    //__product image save method__//
+    public function saveImage(Request $request){
+        if ($request->file('image')){
+            $image =$request->file('image');
+            $imageName =rand().'.'.$image->extension();
+            $directory ='adminAsset/upload-image/product-image/';
+            $imageUrl = $directory.$imageName;
+            $image->move($directory,$imageName);
+            return $imageUrl;
+        }
+        else{
+            return null;
+        }
+    }
+
+    //__product code generator method__//
+    public function generateUniqueCode()
+    {
+        do {
+            $code = Str::random(3).substr(time(), 6,8).Str::random(3);
+        } while (Product::where("code", "=", $code)->first());
+        return strtoupper($code);
     }
 }

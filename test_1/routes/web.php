@@ -64,6 +64,7 @@ Route::prefix('product')->controller(ProductController::class)->group(function (
     Route::get('/index', 'index')->name('product.index');
     Route::get('/create', 'create')->name('product.create');
     Route::post('/store', 'store')->name('product.store');
+    Route::get('/show/{id}', 'show')->name('product.show');
     Route::get('/edit/{id}', 'edit')->name('product.edit');
     Route::post('/update/{id}', 'update')->name('product.update');
     Route::get('/delete/{id}', 'delete')->name('product.delete');
