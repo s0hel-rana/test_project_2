@@ -10,7 +10,7 @@
                         <div class="col-md-6">
                             <div class="images p-3">
                                 <div class="text-center p-4"> <img class="w-100" id="main-image" src="{{asset($product->image) }}"/> </div>
-{{--                                <div class="thumbnail text-center"> <img onclick="change_image(this)" src="https://i.imgur.com/Rx7uKd0.jpg" width="70"> <img onclick="change_image(this)" src="https://i.imgur.com/Dhebu4F.jpg" width="70"> </div>--}}
+                                <div class="thumbnail text-center"> <img onclick="change_image(this)" src="https://i.imgur.com/Rx7uKd0.jpg" width="70"> <img onclick="change_image(this)" src="https://i.imgur.com/Dhebu4F.jpg" width="70"> </div>
                             </div>
                         </div>
                         <div class="col-md-6">
@@ -51,4 +51,6 @@
 {{--        --}}
 {{--    });--}}
 {{--</script>--}}
+
+
 @endsection
